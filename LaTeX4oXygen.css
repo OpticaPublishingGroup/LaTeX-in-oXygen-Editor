@@ -1,0 +1,90 @@
+/* The following CSS is designed to aid rendering of LaTeX equations within an oXygen XML Editor Author mode environment. Use the CSS as part of an oXygen framework */
+
+@namespace oxy url('http://www.oxygenxml.com/extensions/author');
+inline-formula alternatives tex-math:before {
+/* set up for pattern <inline-formula><alternatives><tex-math>$1 - x = 3$</tex-math></alternatives></inline-formula> */
+/* Replace MY-MATHJAX-SERVICE with your MathJax server URL */
+content: oxy_url(oxy_concat('MY-MATHJAX-SERVICE?from=', oxy_xpath("encode-for-uri(substring(substring(normalize-space(child::text()),2),0,string-length(normalize-space(child::text()))-1))"))) 
+
+oxy_button(
+        action, oxy_action(
+            name, "Edit",
+            icon, url('sum.png'),
+            operation, 'ro.sync.ecss.extensions.commons.operations.JSOperation',
+            arg-script, 'function doOperation() { \
+                function escapeXML(s) { \
+                    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\'/g, "&apos;").replace(/"/g, "&quot;"); \
+                } \
+                authorNode=authorAccess.getDocumentController().getNodeAtOffset(authorAccess.getEditorAccess().getCaretOffset()); \
+                jta = new Packages.javax.swing.JTextArea(); \
+                sp = new Packages.javax.swing.JScrollPane(jta); \
+                sp.setPreferredSize(new Packages.java.awt.Dimension(800, 300)); \
+                jta.setFont(jta.getFont().deriveFont(25)); \
+                jta.setLineWrap(true); \
+                jta.setText(authorNode.getTextContent().replaceAll("<\\\\/?\\\\?[^>]*>", "").replaceAll("\\\\s+", " "));\
+                Packages.javax.swing.JOptionPane.showMessageDialog(null, sp, "Editing Equation", Packages.javax.swing.JOptionPane.INFORMATION_MESSAGE); \
+                newValue = Packages.java.util.regex.Pattern.compile("\\\\s+").matcher(jta.getText()).replaceAll(" ");\
+                if(newValue != null && newValue !== authorNode.getTextContent().replaceAll("<\\\\/?\\\\?[^>]*>", "")){ \
+                    authorAccess.getDocumentController().beginCompoundEdit(); \
+                    newValue = "<tex-math notation=\\"LaTeX\\" version=\\"MathJax\\">" + escapeXML(String(newValue)) + "</tex-math>"; \
+                    authorAccess.getDocumentController().delete(authorNode.getStartOffset(), authorNode.getEndOffset()); \
+                    authorAccess.getDocumentController().insertXMLFragment(newValue, authorNode.getStartOffset()); \
+                    authorAccess.getDocumentController().endCompoundEdit(); \
+                } \
+            }'),
+        transparent, true,
+        showIcon, true
+    );
+    visibility: visible;
+    vertical-align: middle;
+    transform: scale(2);
+    font-size: 14px;
+}
+
+
+disp-formula alternatives tex-math:before {
+/*  set up for pattern <disp-formula><alternatives><tex-math>$$ x - y = \iota $$</tex-math></alternatives></disp-formula> */
+/* Replace MY-MATHJAX-SERVICE with your MathJax server URL */
+content: oxy_url(oxy_concat('MY-MATHJAX-SERVICE/?from=', oxy_xpath("encode-for-uri( translate(normalize-space(child::text()),'$',''))"))) 
+oxy_button(
+        action, oxy_action(
+            name, "Edit",
+            icon, url('sum.png'),
+            operation, 'ro.sync.ecss.extensions.commons.operations.JSOperation',
+            arg-script, 'function doOperation() { \
+                function escapeXML(s) { \
+                    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\'/g, "&apos;").replace(/"/g, "&quot;"); \
+                } \
+                authorNode=authorAccess.getDocumentController().getNodeAtOffset(authorAccess.getEditorAccess().getCaretOffset()); \
+                jta = new Packages.javax.swing.JTextArea(); \
+                sp = new Packages.javax.swing.JScrollPane(jta); \
+                sp.setPreferredSize(new Packages.java.awt.Dimension(800, 300)); \
+                jta.setFont(jta.getFont().deriveFont(25)); \
+                jta.setLineWrap(true); \
+                jta.setText(authorNode.getTextContent().replaceAll("<\\\\/?\\\\?[^>]*>", "").replaceAll("\\\\s+", " "));\
+                Packages.javax.swing.JOptionPane.showMessageDialog(null, sp, "Editing Equation", Packages.javax.swing.JOptionPane.INFORMATION_MESSAGE); \
+                newValue = Packages.java.util.regex.Pattern.compile("\\\\s+").matcher(jta.getText()).replaceAll(" ");\
+                if(newValue != null && newValue !== authorNode.getTextContent().replaceAll("<\\\\/?\\\\?[^>]*>", "")){ \
+                    authorAccess.getDocumentController().beginCompoundEdit(); \
+                    newValue = "<tex-math notation=\\"LaTeX\\" version=\\"MathJax\\">" + escapeXML(String(newValue)) + "</tex-math>"; \
+                    authorAccess.getDocumentController().delete(authorNode.getStartOffset(), authorNode.getEndOffset()); \
+                    authorAccess.getDocumentController().insertXMLFragment(newValue, authorNode.getStartOffset()); \
+                    authorAccess.getDocumentController().endCompoundEdit(); \
+                } \
+            }'),
+        transparent, true,
+        showIcon, true
+    );
+    visibility: visible;
+    vertical-align: middle;
+    transform: scale(2);
+    font-size: 14px;
+}
+
+tex-math{
+font-size:0px}
+
+inline-formula tex-math {
+    visibility: -oxy-collapse-text;
+    white-space: pre;
+}

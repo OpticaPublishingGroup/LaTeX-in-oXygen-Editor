@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "JATS-journalpublishing1-3.dtd">
+<article xml:lang="en" article-type="review-article"
+	xmlns:mml="http://www.w3.org/1998/Math/MathML"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<front>
+		<journal-meta>
+			<journal-id/>
+			<issn/>
+		</journal-meta>
+		<article-meta>
+			<title-group>
+				<article-title>Sample equations</article-title>
+			</title-group>
+			<pub-date>
+				<year/>
+			</pub-date>
+		</article-meta>
+	</front>
+	<body>
+		<p>Here is an inline formula: <inline-formula><alternatives>
+			<tex-math>$y - 2 = 3$</tex-math>
+			</alternatives></inline-formula></p>
+		<p>Here is a display formula: <disp-formula> <alternatives>
+			<tex-math>$$x - y = \iota$$</tex-math>
+			</alternatives> </disp-formula></p>
+	</body>
+</article>
