@@ -1,4 +1,4 @@
-Copyright (c) 2025 optica.org
+Copyright (c) 2025 Optica Publishing Group
 
 MIT License
 
