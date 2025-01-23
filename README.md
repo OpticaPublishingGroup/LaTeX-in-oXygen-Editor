@@ -27,4 +27,4 @@ Distributed under the project_license. See `LICENSE.txt` for more information.
 
 ## Contact
 
-custserv@optica.org
+pubsquestions@optica.org
