@@ -45,7 +45,7 @@ oxy_button(
 disp-formula alternatives tex-math:before {
 /*  set up for pattern <disp-formula><alternatives><tex-math>$$ x - y = \iota $$</tex-math></alternatives></disp-formula> */
 /* Replace MY-MATHJAX-SERVICE with your MathJax server URL */
-content: oxy_url(oxy_concat('MY-MATHJAX-SERVICE/?from=', oxy_xpath("encode-for-uri( translate(normalize-space(child::text()),'$',''))"))) 
+content: oxy_url(oxy_concat('MY-MATHJAX-SERVICE?from=', oxy_xpath("encode-for-uri( translate(normalize-space(child::text()),'$',''))"))) 
 oxy_button(
         action, oxy_action(
             name, "Edit",
