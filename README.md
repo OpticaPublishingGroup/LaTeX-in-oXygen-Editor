@@ -16,11 +16,6 @@ Provided in this repository are CSS commands that use custom oXygen functions an
 The CSS file uses custom functions from the following resource and is configured to obtain math from the XML tag &lt;tex-math&gt;:
 [oXygen CSS functions](https://www.oxygenxml.com/doc/versions/27.0/ug-editor/topics/dg-oxygen-css-functions.html). 
 
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ## Prerequisites
 
 * oXygen XML Editor and a suitable oXygen framework (the CSS must be used within a compatible [oXygen framework directory](https://www.oxygenxml.com/doc/versions/27.0/ug-editor/topics/selecting-combining-multiple-css-styles.html)).
