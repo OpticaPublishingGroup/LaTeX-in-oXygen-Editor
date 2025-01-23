@@ -3,12 +3,9 @@
 
 ## About The Project
 
-This repository contains code and instructions for rendering and editing LaTeX equations in the Author mode of oXygen XML Editor desktop edition. 
-To use the code, you must have access to a MathJax web service configured to accept LaTeX code as a parameter and return an SVG file showing the rendered math. 
-See the following references for setting up such a service: 
-
-*[MathJax web hosting](https://docs.mathjax.org/en/latest/web/hosting.html)
-*[MathJax general documentation](https://docs.mathjax.org/en/latest/)
+This repository contains code and instructions for rendering and editing LaTeX equations in the Author mode of [oXygen XML Editor](https://www.oxygenxml.com/) desktop edition. 
+To use the code, you must have access to a [MathJax](https://www.mathjax.org/) web service configured to accept LaTeX code as a parameter and return an SVG file showing the rendered math. 
+See the following references for setting up such a service: [MathJax web hosting](https://docs.mathjax.org/en/latest/web/hosting.html),  [MathJax general documentation](https://docs.mathjax.org/en/latest/)
 
 Provided in this repository are CSS commands that use custom oXygen functions and Javascript to do two things: 
 1. Send LaTeX equations to a MathJax service to return an SVG rendering to the oXygen XML Editor Author environment
