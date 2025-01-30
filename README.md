@@ -15,7 +15,7 @@ The CSS file uses custom functions from the following resource and is configured
 [oXygen CSS functions](https://www.oxygenxml.com/doc/versions/27.0/ug-editor/topics/dg-oxygen-css-functions.html). 
 
 ![oxygen-math-editor](https://github.com/user-attachments/assets/01d26ef7-17ac-4d2f-abb4-59846fc191f8 "LaTeX in oXygen showing MathJax display (left) and code editor (right)")
-View in oXygen Editor Author mode. Code editor is invoked by clicking on icon as shown. Image from Srivallapanondh S., et al. , Opt. Express, **33,** 2558 (2025), [10​.1364/OE.542061](http://dx.doi.org/10.1364/OE.542061).
+View shown in oXygen Editor Author mode. Code editor is invoked by clicking on sum icon. Image from Srivallapanondh S., et al. , Opt. Express, **33,** 2558 (2025), [10​.1364/OE.542061](http://dx.doi.org/10.1364/OE.542061).
 
 
 ## Prerequisites
