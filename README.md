@@ -29,4 +29,4 @@ Distributed under the project_license. See `LICENSE.txt` for more information.
 
 ## Contact
 
-pubsquestions@optica.org
+pubsquestions at optica dot org
